@@ -25,6 +25,16 @@ const Feed = () => {
     fetchFeed();
   }, []);
 
+  if (!feed) return;
+
+  if (feed.length === 0) {
+    return (
+      <div className="text-center text-bold text-3xl mt-10">
+        <h2>No New Users Found in Feed</h2>
+      </div>
+    );
+  }
+
   return (
     feed && (
       <div className="flex justify-center my-10">
