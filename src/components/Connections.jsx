@@ -38,19 +38,12 @@ const Connections = () => {
         const { firstName, lastName, photoUrl, about, age, gender, _id } =
           connection;
         return (
-          <div
-            className="flex gap-4 w-1/2 bg-base-300 p-4 m-4 rounded-lg mx-auto"
-            key={_id}
-          >
-            <div>
-              <img
-                src={photoUrl}
-                alt={`${firstName} ${lastName}`}
-                className="w-20 h-20 rounded-full"
-              />
-            </div>
-            <div className="text-start">
-              <h2 className="font-bold text-xl">{`${firstName} ${lastName}`}</h2>
+          <div className="card bg-base-300 w-96 shadow-sm mx-auto my-10" key={_id}>
+            <figure>
+              <img src={photoUrl} alt={`${firstName} ${lastName}`} />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title">{`${firstName} ${lastName}`}</h2>
               {age && gender && <p>{`${age}, ${gender}`}</p>}
               <p>{about}</p>
             </div>
